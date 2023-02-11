@@ -1,0 +1,76 @@
+h1 {
+  color: green;
+}
+input {
+  width: 160px;
+}
+.justify-content-center {
+  margin: 10px auto;
+}
+.container-search {
+  display: block;
+  margin: 0;
+  width: 360px;
+  padding: 0;
+}
+.btn-primary {
+  background-color: #cce2f3;
+  border-color: #5aaaff;
+  color: #5aaaff;
+  border-radius: 30px;
+}
+.container {
+  width: 360px;
+  height: 480px;
+  border: 1px solid black;
+}
+.row {
+  width: 350px;
+}
+.column {
+  display: block;
+  text-align: justify;
+  width: 160px;
+  border: 1px solid black;
+  margin: 5px auto;
+}
+.left {
+  color: green;
+}
+.name-weather {
+  height: 44px;
+}
+.c {
+  text-decoration: none;
+}
+.c:focus {
+  color: black;
+  font-size: x-large;
+}
+.f {
+  text-decoration: none;
+}
+.f:focus {
+  color: black;
+  font-size: x-large;
+}
+.col-sm-2 {
+  display: block;
+  border: 1px solid #5aaaff;
+  padding: 34px 0;
+  margin: 3px auto;
+  text-align: center;
+  width: 52px;
+}
+.temp {
+  font-size: xx-small;
+}
+.end {
+  width: 200px;
+  padding: 0;
+  border: 1px solid black;
+  font-size: 12px;
+  display: block;
+  margin: 30px auto 10px;
+  text-align: center;
+}
