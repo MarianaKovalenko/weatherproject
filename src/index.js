@@ -52,6 +52,12 @@ function showCityWeather(event) {
     let minTempApi = Math.round(response.data.main.temp_min);
     let maxTempApi = Math.round(response.data.main.temp_max);
     city.innerHTML = cityInputApi;
+    let citylength = city.innerHTML.length;
+    if (citylength > 7) {
+      city.style.fontSize = "22px";
+    } else {
+      city.style.fontSize = "35px";
+    };
     currentTemp.innerHTML = currentTempApi;
     humidity.innerHTML = `Humidity: ${humidityApi}%`;
     wind.innerHTML = `Wind: ${windApi} km/h`;
@@ -87,6 +93,12 @@ function currentTemp(response) {
   currentTemp.innerHTML = temp;
   let nameLoc = document.querySelector("h1");
   nameLoc.innerHTML = response.data.name.toUpperCase();
+  let nameLocLength = nameLoc.innerHTML.length;
+  if (nameLocLength > 7) {
+    nameLoc.style.fontSize = "22px";
+  } else {
+    nameLoc.style.fontSize = "35px";
+  };
   let humidity = document.querySelector("#humidity");
   let humidityApi = response.data.main.humidity;
   humidity.innerHTML = `Humidity: ${humidityApi}%`;
