@@ -20,8 +20,8 @@ input {
   border-radius: 30px;
 }
 .container {
-  width: 400px;
-  height: 540px;
+  width: 360px;
+  height: 480px;
   border: 1px solid black;
 }
 .row {
