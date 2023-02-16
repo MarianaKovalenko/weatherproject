@@ -21,8 +21,14 @@ input {
 }
 .container {
   width: 360px;
-  height: 480px;
+  height: 560px;
   border: 1px solid black;
+  justify-content: center;
+  justify-items: center;
+  border-radius: 5px;
+  box-shadow: black 3px 3px 10px;
+  background-image: url(src/kyivimg.jpg);
+  background-size: 360px 560px;
 }
 .row {
   width: 350px;
@@ -61,6 +67,7 @@ input {
   margin: 3px auto;
   text-align: center;
   width: 52px;
+  color: #5aaaff;
 }
 .temp {
   font-size: xx-small;
@@ -71,6 +78,10 @@ input {
   border: 1px solid black;
   font-size: 12px;
   display: block;
-  margin: 30px auto 10px;
+  margin: 7px auto;
   text-align: center;
+}
+#icon {
+  opacity: 0.4;
+  border-radius: 30%;
 }

@@ -52,6 +52,7 @@ function showCityWeather(event) {
     let minTempApi = Math.round(response.data.main.temp_min);
     let maxTempApi = Math.round(response.data.main.temp_max);
     city.innerHTML = cityInputApi;
+    // Length of city's name
     let citylength = city.innerHTML.length;
     if (citylength > 7) {
       city.style.fontSize = "22px";
@@ -59,6 +60,20 @@ function showCityWeather(event) {
       city.style.fontSize = "35px";
     };
     currentTemp.innerHTML = currentTempApi;
+    // functions Fahrenheit and Celsius
+    let fTemp = document.querySelector("#F-temp");
+    function showFTemp() {
+      currentTemp.innerHTML = Math.round(
+        (response.data.main.temp * 9) / 5 + 32
+      );
+    }
+    fTemp.addEventListener("click", showFTemp);
+    let cTemp = document.querySelector("#C-temp");
+    function showCTemp() {
+      currentTemp.innerHTML = Math.round(response.data.main.temp);
+    }
+    cTemp.addEventListener("click", showCTemp);
+    
     humidity.innerHTML = `Humidity: ${humidityApi}%`;
     wind.innerHTML = `Wind: ${windApi} km/h`;
     description.innerHTML = descriptionApi;
@@ -91,6 +106,21 @@ function currentTemp(response) {
   let temp = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#curent-temp");
   currentTemp.innerHTML = temp;
+  // functions Fahrenheit and Celsius
+    let fTemp = document.querySelector("#F-temp");
+    function showFTemp() {
+      currentTemp.innerHTML = Math.round(
+        (response.data.main.temp * 9) / 5 + 32
+      );
+    }
+    fTemp.addEventListener("click", showFTemp);
+    let cTemp = document.querySelector("#C-temp");
+    function showCTemp() {
+      currentTemp.innerHTML = Math.round(response.data.main.temp);
+    }
+    cTemp.addEventListener("click", showCTemp);
+   
+  // Lenght of Location's name
   let nameLoc = document.querySelector("h1");
   nameLoc.innerHTML = response.data.name.toUpperCase();
   let nameLocLength = nameLoc.innerHTML.length;
@@ -99,6 +129,7 @@ function currentTemp(response) {
   } else {
     nameLoc.style.fontSize = "35px";
   };
+
   let humidity = document.querySelector("#humidity");
   let humidityApi = response.data.main.humidity;
   humidity.innerHTML = `Humidity: ${humidityApi}%`;
