@@ -35,6 +35,7 @@ function showCityWeather(event) {
   let cityInput = document.querySelector("#city-input");
   let city = document.querySelector("h1");
   let currentTemp = document.querySelector("#curent-temp");
+  let iconElement = document.querySelector("#icon");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
@@ -44,6 +45,7 @@ function showCityWeather(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(function (response) {
+    console.log(response.data);
     let cityInputApi = response.data.name.toUpperCase();
     let currentTempApi = Math.round(response.data.main.temp);
     let humidityApi = response.data.main.humidity;
@@ -72,6 +74,12 @@ function showCityWeather(event) {
       currentTemp.innerHTML = Math.round(response.data.main.temp);
     }
     cTemp.addEventListener("click", showCTemp);
+    // changing weather-icons
+    iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
     humidity.innerHTML = `Humidity: ${humidityApi}%`;
     wind.innerHTML = `Wind: ${windApi} km/h`;
     description.innerHTML = descriptionApi;
@@ -81,7 +89,7 @@ function showCityWeather(event) {
 }
 buttonSearch.addEventListener("click", showCityWeather);
 
-// temp curren location
+// temp current location
 let location = document.querySelector("#location");
 function currentTemp(response) {
   console.log(response.data);
@@ -123,6 +131,12 @@ function currentTemp(response) {
   let maxTemp = document.querySelector("#max-temp");
   let maxTempApi = Math.round(response.data.main.temp_max);
   maxTemp.innerHTML = `max ${maxTempApi}°C |°F`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function showMylocation(position) {
   console.log(position.coords.latitude);
