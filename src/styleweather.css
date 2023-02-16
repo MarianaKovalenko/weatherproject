@@ -30,7 +30,7 @@ input {
   justify-items: center;
   border-radius: 5px;
   box-shadow: black 3px 3px 10px;
-  background-image: url(src/kyivimg.jpg);
+  background-image: url(kyivimg.jpg);
   background-size: 360px 560px;
 }
 .row {
