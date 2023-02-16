@@ -1,3 +1,6 @@
+body {
+  background-color: #cce2f3;
+}
 h1 {
   color: green;
 }
@@ -63,8 +66,8 @@ input {
 .col-sm-2 {
   display: block;
   border: 1px solid #5aaaff;
-  padding: 34px 0;
-  margin: 3px auto;
+  padding: 16px 0;
+  margin: 120px auto 0;
   text-align: center;
   width: 52px;
   color: #5aaaff;

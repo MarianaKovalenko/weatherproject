@@ -52,13 +52,12 @@ function showCityWeather(event) {
     let minTempApi = Math.round(response.data.main.temp_min);
     let maxTempApi = Math.round(response.data.main.temp_max);
     city.innerHTML = cityInputApi;
-    // Length of city's name
     let citylength = city.innerHTML.length;
-    if (citylength > 7) {
+    if (citylength > 6) {
       city.style.fontSize = "22px";
     } else {
       city.style.fontSize = "35px";
-    };
+    }
     currentTemp.innerHTML = currentTempApi;
     // functions Fahrenheit and Celsius
     let fTemp = document.querySelector("#F-temp");
@@ -73,7 +72,6 @@ function showCityWeather(event) {
       currentTemp.innerHTML = Math.round(response.data.main.temp);
     }
     cTemp.addEventListener("click", showCTemp);
-    
     humidity.innerHTML = `Humidity: ${humidityApi}%`;
     wind.innerHTML = `Wind: ${windApi} km/h`;
     description.innerHTML = descriptionApi;
@@ -81,23 +79,7 @@ function showCityWeather(event) {
     maxTemp.innerHTML = `max ${maxTempApi}°C |°F`;
   });
 }
-
 buttonSearch.addEventListener("click", showCityWeather);
-// let cTemp = document.querySelector("#C-temp");
-// function showCTemp() {
-// curentTemp.innerHTML = `${Math.round(
-// weather[cityInput.value.trim().toLowerCase()].temp
-// )}`;
-// }
-// cTemp.addEventListener("click", showCTemp);
-
-// let fTemp = document.querySelector("#F-temp");
-// function showFTemp() {
-// curentTemp.innerHTML = `${Math.round(
-// (weather[cityInput.value.trim().toLowerCase()].temp * 9) / 5 + 32
-// )}`;
-// }
-// fTemp.addEventListener("click", showFTemp);
 
 // temp curren location
 let location = document.querySelector("#location");
@@ -107,29 +89,25 @@ function currentTemp(response) {
   let currentTemp = document.querySelector("#curent-temp");
   currentTemp.innerHTML = temp;
   // functions Fahrenheit and Celsius
-    let fTemp = document.querySelector("#F-temp");
-    function showFTemp() {
-      currentTemp.innerHTML = Math.round(
-        (response.data.main.temp * 9) / 5 + 32
-      );
-    }
-    fTemp.addEventListener("click", showFTemp);
-    let cTemp = document.querySelector("#C-temp");
-    function showCTemp() {
-      currentTemp.innerHTML = Math.round(response.data.main.temp);
-    }
-    cTemp.addEventListener("click", showCTemp);
-   
+  let fTemp = document.querySelector("#F-temp");
+  function showFTemp() {
+    currentTemp.innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
+  }
+  fTemp.addEventListener("click", showFTemp);
+  let cTemp = document.querySelector("#C-temp");
+  function showCTemp() {
+    currentTemp.innerHTML = Math.round(response.data.main.temp);
+  }
+  cTemp.addEventListener("click", showCTemp);
   // Lenght of Location's name
   let nameLoc = document.querySelector("h1");
   nameLoc.innerHTML = response.data.name.toUpperCase();
   let nameLocLength = nameLoc.innerHTML.length;
-  if (nameLocLength > 7) {
+  if (nameLocLength > 6) {
     nameLoc.style.fontSize = "22px";
   } else {
     nameLoc.style.fontSize = "35px";
-  };
-
+  }
   let humidity = document.querySelector("#humidity");
   let humidityApi = response.data.main.humidity;
   humidity.innerHTML = `Humidity: ${humidityApi}%`;
@@ -162,3 +140,9 @@ function currentTempLocal(event) {
   navigator.geolocation.getCurrentPosition(showMylocation);
 }
 location.addEventListener("click", currentTempLocal);
+
+let cTemp = document.querySelector("#C-temp");
+function showCTemp() {
+  currentTemp.innerHTML = 10;
+}
+cTemp.addEventListener("click", showCTemp);
