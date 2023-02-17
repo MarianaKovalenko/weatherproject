@@ -83,6 +83,7 @@ input {
   display: block;
   margin: 7px auto;
   text-align: center;
+  color: white;
 }
 #icon {
   opacity: 0.4;
