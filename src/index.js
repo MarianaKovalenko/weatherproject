@@ -113,8 +113,8 @@ function showCityWeather(event) {
     humidity.innerHTML = `Humidity: ${humidityApi}%`;
     wind.innerHTML = `Wind: ${windApi} km/h`;
     description.innerHTML = descriptionApi;
-    minTemp.innerHTML = `min ${minTempApi}°C |°F`;
-    maxTemp.innerHTML = `max ${maxTempApi}°C |°F`;
+    minTemp.innerHTML = minTempApi;
+    maxTemp.innerHTML = maxTempApi;
   });
 }
 buttonSearch.addEventListener("click", showCityWeather);
