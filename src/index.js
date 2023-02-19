@@ -76,6 +76,34 @@ function showCityWeather(event) {
       currentTemp.innerHTML = Math.round(response.data.main.temp);
     }
     cTemp.addEventListener("click", showCTemp);
+    // functions Fahrenheit and Celsius for min temperature
+    let FTempMin=document.querySelector("#F-tempMin")
+  
+  function showMinTempF(event){
+    event.preventDefault();
+    minTemp.innerHTML = Math.round((response.data.main.temp_min*9)/5+32);
+  };
+  FTempMin.addEventListener("click", showMinTempF);
+
+  let CTempMin=document.querySelector("#C-tempMin");
+  function showMinTempC(event){
+    event.preventDefault();
+    minTemp.innerHTML=Math.round(response.data.main.temp_min);
+  };
+  CTempMin.addEventListener("click",showMinTempC);
+  let FTempMax = document.querySelector("#F-tempMax");
+  function showMaxTempF(event){
+    event.preventDefault();
+    maxTemp.innerHTML = Math.round(response.data.main.temp_max*9/5+32);
+  }
+  FTempMax.addEventListener("click", showMaxTempF);
+  let CTempMax = document.querySelector("#C-tempMax");
+  function showMaxTempC(event){
+    event.preventDefault();
+    maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+  };
+  CTempMax.addEventListener("click", showMaxTempC);
+
     // changing weather-icons
     iconElement.setAttribute(
       "src",
@@ -132,7 +160,7 @@ function currentTemp(response) {
   let minTemp = document.querySelector("#min-temp");
   let minTempApi = Math.round(response.data.main.temp_min);
   minTemp.innerHTML = minTempApi;
-  // function F and C for min temperature
+  // functions F and C for min temperature
   let FTempMin=document.querySelector("#F-tempMin")
   
   function showMinTempF(event){
@@ -142,16 +170,16 @@ function currentTemp(response) {
   FTempMin.addEventListener("click", showMinTempF);
 
   let CTempMin=document.querySelector("#C-tempMin");
-
   function showMinTempC(event){
     event.preventDefault();
-    minTemp.inner=Math.round(response.data.main.temp_min);
+    minTemp.innerHTML=Math.round(response.data.main.temp_min);
   };
   CTempMin.addEventListener("click",showMinTempC);
 
   let maxTemp = document.querySelector("#max-temp");
   let maxTempApi = Math.round(response.data.main.temp_max);
   maxTemp.innerHTML = maxTempApi;
+  // functions F and C for max temperature
   let FTempMax = document.querySelector("#F-tempMax");
   function showMaxTempF(event){
     event.preventDefault();
@@ -164,7 +192,7 @@ function currentTemp(response) {
     maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   };
   CTempMax.addEventListener("click", showMaxTempC);
-
+// 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
