@@ -63,14 +63,16 @@ function showCityWeather(event) {
     currentTemp.innerHTML = currentTempApi;
     // functions Fahrenheit and Celsius
     let fTemp = document.querySelector("#F-temp");
-    function showFTemp() {
+    function showFTemp(event) {
+      event.preventDefault();
       currentTemp.innerHTML = Math.round(
         (response.data.main.temp * 9) / 5 + 32
       );
     }
     fTemp.addEventListener("click", showFTemp);
     let cTemp = document.querySelector("#C-temp");
-    function showCTemp() {
+    function showCTemp(event) {
+      event.preventDefault();
       currentTemp.innerHTML = Math.round(response.data.main.temp);
     }
     cTemp.addEventListener("click", showCTemp);
@@ -98,12 +100,14 @@ function currentTemp(response) {
   currentTemp.innerHTML = temp;
   // functions Fahrenheit and Celsius
   let fTemp = document.querySelector("#F-temp");
-  function showFTemp() {
+  function showFTemp(event) {
+    event.preventDefault();
     currentTemp.innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
   }
   fTemp.addEventListener("click", showFTemp);
   let cTemp = document.querySelector("#C-temp");
-  function showCTemp() {
+  function showCTemp(event) {
+    event.preventDefault();
     currentTemp.innerHTML = Math.round(response.data.main.temp);
   }
   cTemp.addEventListener("click", showCTemp);
