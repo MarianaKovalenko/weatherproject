@@ -145,7 +145,7 @@ function currentTemp(response) {
 
   function showMinTempC(event){
     event.preventDefault();
-    minTemp.inner=minTempApi;
+    minTemp.inner=Math.round(response.data.main.temp_min);
   };
   CTempMin.addEventListener("click",showMinTempC);
 
