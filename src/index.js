@@ -131,10 +131,32 @@ function currentTemp(response) {
   description.innerHTML = descriptionApi;
   let minTemp = document.querySelector("#min-temp");
   let minTempApi = Math.round(response.data.main.temp_min);
-  minTemp.innerHTML = `min ${minTempApi}°C |°F`;
+  minTemp.innerHTML = minTempApi;
+  // function F and C for min temperature
+  let FTempMin=document.querySelector("#F-tempMin")
+  
+  function showMinTempF(event){
+    event.preventDefault();
+    minTemp.innerHTML = (minTempApi*9)/5+32;
+  };
+  FTempMin.addEventListener("click", showMinTempF);
+
+  let CTempMin=document.querySelector("#C-tempMin");
+
+  function showMinTempC(event){
+    event.preventDefault();
+    minTemp.inner=minTempApi;
+  };
+  CTempMin.addEventListener("click",showMinTempC);
+
   let maxTemp = document.querySelector("#max-temp");
   let maxTempApi = Math.round(response.data.main.temp_max);
-  maxTemp.innerHTML = `max ${maxTempApi}°C |°F`;
+  maxTemp.innerHTML = maxTempApi;
+  function showMaxTempF(event){
+    event.preventDefault();
+    maxTemp.innerHTML = maxTempApi*9/5+32
+  }
+  FTempMax.addEventListener("click", showMaxTempF);
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
