@@ -152,11 +152,19 @@ function currentTemp(response) {
   let maxTemp = document.querySelector("#max-temp");
   let maxTempApi = Math.round(response.data.main.temp_max);
   maxTemp.innerHTML = maxTempApi;
+  let FTempMax = document.querySelector("#F-tempMax");
   function showMaxTempF(event){
     event.preventDefault();
-    maxTemp.innerHTML = maxTempApi*9/5+32
+    maxTemp.innerHTML = Math.round(response.data.main.temp_max*9/5+32);
   }
   FTempMax.addEventListener("click", showMaxTempF);
+  let CTempMax = document.querySelector("#C-tempMax");
+  function showMaxTempC(event){
+    event.preventDefault();
+    maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+  };
+  CTempMax.addEventListener("click", showMaxTempC);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
