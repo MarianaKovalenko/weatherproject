@@ -137,7 +137,7 @@ function currentTemp(response) {
   
   function showMinTempF(event){
     event.preventDefault();
-    minTemp.innerHTML = Matr.round((minTempApi*9)/5+32);
+    minTemp.innerHTML = Math.round((minTempApi*9)/5+32);
   };
   FTempMin.addEventListener("click", showMinTempF);
 
@@ -145,7 +145,7 @@ function currentTemp(response) {
 
   function showMinTempC(event){
     event.preventDefault();
-    minTemp.inner=Math.round(response.data.main.temp_min);
+    minTemp.inner=minTempApi;
   };
   CTempMin.addEventListener("click",showMinTempC);
 
