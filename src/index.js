@@ -64,6 +64,8 @@ function showCityWeather(event) {
     // functions Fahrenheit and Celsius
     let fTemp = document.querySelector("#F-temp");
     function showFTemp(event) {
+      fTemp.classList.add("active");
+      cTemp.classList.remove("active");
       event.preventDefault();
       currentTemp.innerHTML = Math.round(
         (response.data.main.temp * 9) / 5 + 32
@@ -72,6 +74,8 @@ function showCityWeather(event) {
     fTemp.addEventListener("click", showFTemp);
     let cTemp = document.querySelector("#C-temp");
     function showCTemp(event) {
+      cTemp.classList.add("active");
+      fTemp.classList.remove("active");
       event.preventDefault();
       currentTemp.innerHTML = Math.round(response.data.main.temp);
     }
@@ -80,6 +84,8 @@ function showCityWeather(event) {
     let FTempMin=document.querySelector("#F-tempMin")
   
   function showMinTempF(event){
+    FTempMin.classList.add("active");
+    CTempMin.classList.remove("active");
     event.preventDefault();
     minTemp.innerHTML = Math.round((response.data.main.temp_min*9)/5+32);
   };
@@ -87,18 +93,24 @@ function showCityWeather(event) {
 
   let CTempMin=document.querySelector("#C-tempMin");
   function showMinTempC(event){
+    CTempMin.classList.add("active");
+    FTempMin.classList.remove("active");
     event.preventDefault();
     minTemp.innerHTML=Math.round(response.data.main.temp_min);
   };
   CTempMin.addEventListener("click",showMinTempC);
   let FTempMax = document.querySelector("#F-tempMax");
   function showMaxTempF(event){
+    FTempMax.classList.add("active");
+    CTempMax.classList.remove("active");
     event.preventDefault();
     maxTemp.innerHTML = Math.round(response.data.main.temp_max*9/5+32);
   }
   FTempMax.addEventListener("click", showMaxTempF);
   let CTempMax = document.querySelector("#C-tempMax");
   function showMaxTempC(event){
+    CTempMax.classList.add("active");
+    FTempMax.classList.remove("active");
     event.preventDefault();
     maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   };
@@ -129,12 +141,16 @@ function currentTemp(response) {
   // functions Fahrenheit and Celsius
   let fTemp = document.querySelector("#F-temp");
   function showFTemp(event) {
+    fTemp.classList.add("active");
+    cTemp.classList.remove("active");
     event.preventDefault();
     currentTemp.innerHTML = Math.round((response.data.main.temp * 9) / 5 + 32);
   }
   fTemp.addEventListener("click", showFTemp);
   let cTemp = document.querySelector("#C-temp");
   function showCTemp(event) {
+    cTemp.classList.add("active");
+    fTemp.classList.remove("active");
     event.preventDefault();
     currentTemp.innerHTML = Math.round(response.data.main.temp);
   }
@@ -165,12 +181,16 @@ function currentTemp(response) {
   
   function showMinTempF(event){
     event.preventDefault();
+    FTempMin.classList.add("active");
+    CTempMin.classList.remove("active");
     minTemp.innerHTML = Math.round((response.data.main.temp_min*9)/5+32);
   };
   FTempMin.addEventListener("click", showMinTempF);
 
   let CTempMin=document.querySelector("#C-tempMin");
   function showMinTempC(event){
+    CTempMin.classList.add("active");
+    FTempMin.classList.remove("active");
     event.preventDefault();
     minTemp.innerHTML=Math.round(response.data.main.temp_min);
   };
@@ -182,12 +202,16 @@ function currentTemp(response) {
   // functions F and C for max temperature
   let FTempMax = document.querySelector("#F-tempMax");
   function showMaxTempF(event){
+    FTempMax.classList.add("active");
+    CTempMax.classList.remove("active");
     event.preventDefault();
     maxTemp.innerHTML = Math.round(response.data.main.temp_max*9/5+32);
   }
   FTempMax.addEventListener("click", showMaxTempF);
   let CTempMax = document.querySelector("#C-tempMax");
   function showMaxTempC(event){
+    CTempMax.classList.add("active");
+    FTempMax.classList.remove("active");
     event.preventDefault();
     maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   };
