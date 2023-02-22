@@ -64,7 +64,7 @@ input {
   font-size: x-large;
 }
 .col-sm-2 {
-  display: block;
+  display: flex;
   border: 1px solid #5aaaff;
   padding: 16px 0;
   margin: 120px auto 0;
