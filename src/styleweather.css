@@ -38,6 +38,7 @@ input {
 }
 .row #first-day {
   margin: 0;
+  height: 290px;
 }
 .column {
   display: block;
