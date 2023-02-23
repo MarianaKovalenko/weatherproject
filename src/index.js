@@ -127,10 +127,18 @@ function showCityWeather(event) {
     description.innerHTML = descriptionApi;
     minTemp.innerHTML = minTempApi;
     maxTemp.innerHTML = maxTempApi;
+    getForecast(response.data.coord);
   });
 }
 buttonSearch.addEventListener("click", showCityWeather);
-
+// forecast function
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "34ae1065362d42545661451bda2b8a1f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
 // temp current location
 let location = document.querySelector("#location");
 function currentTemp(response) {
@@ -223,6 +231,7 @@ function currentTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  getForecast(response.data.coord);
 }
 function showMylocation(position) {
   console.log(position.coords.latitude);
@@ -246,38 +255,46 @@ function showCTemp() {
   currentTemp.innerHTML = 10;
 }
 cTemp.addEventListener("click", showCTemp);
+
 //displayForecast
-function displayForecast() {
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row" id="first-day">`;
 
-  let days = ["SAT", "SUN", "MON", "TUE", "WED", "THU"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-2">
-          ${day}
-          <img id="icon" src="src/cloudy.gif" alt="snowflake" width="48px" />
+          ${formatDay(forecastDay.dt)}
+          <img id="icon" src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" alt="snowflake" width="48px" />
          
           <div class="temp">
-              <div>
+              <div >
                 max 
               </br>
-              -2°C |°F
+              <span>
+              ${Math.round(forecastDay.temp.max)}
+              </span>
+              C |°F
               </div>
               <div>
                 min 
               </br>
-              -2°C |°F
+              <span>
+              ${Math.round(forecastDay.temp.min)}
+              </span>
+              C |°F
               </div>
           </div>
         </div>
       `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
-
   forecastElement.innerHTML = forecastHTML;
 }
-
-displayForecast();
