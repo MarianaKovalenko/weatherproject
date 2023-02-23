@@ -261,7 +261,7 @@ function displayForecast() {
           <img id="icon" src="src/cloudy.gif" alt="snowflake" width="48px" />
          
           <div class="temp">
-              <div >
+              <div>
                 max 
               </br>
               -2°C |°F
