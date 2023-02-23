@@ -254,7 +254,7 @@ function displayForecast() {
   let days = ["SAT", "SUN", "MON", "TUE", "WED", "THU"];
   days.forEach(function (day) {
     forecastHTML =
-      forecastHTML +<
+      forecastHTML +
       `<div class="col-2">
             ${day}
           <div class="col-sm">
