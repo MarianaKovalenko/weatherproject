@@ -26,6 +26,14 @@ function curentDate() {
 }
 let showDate = document.querySelector("#curently-date");
 showDate.innerHTML = curentDate();
+			
+// format date for forecast		
+function formatDay(timestamp) {		
+  let date = new Date(timestamp * 1000);		
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];		
+  let day = days[date.getDay()];		
+  return day;		
+}
 
 // city
 
