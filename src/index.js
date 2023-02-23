@@ -255,29 +255,29 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col-2">
-            ${day}
-          <div class="col-sm">
-            <img id="icon" src="src/cloudy.gif" alt="snowflake" width="48px" />
-          </div>
+      `
+        <div class="col-2">
+          ${day}
+          <img id="icon" src="src/cloudy.gif" alt="snowflake" width="48px" />
+         
           <div class="temp">
-            <div>
-              min 
-            </br>
-            -2°C |°F
-            </div>
-            <div">
-              min 
-            </br>
-            -2°C |°F
-            </div>
+              <div >
+                max 
+              </br>
+              -2°C |°F
+              </div>
+              <div>
+                min 
+              </br>
+              -2°C |°F
+              </div>
           </div>
         </div>
-        `;
+      `;
   });
   forecastHTML = forecastHTML + `</div>`;
 
   forecastElement.innerHTML = forecastHTML;
-};
+}
 
 displayForecast();
