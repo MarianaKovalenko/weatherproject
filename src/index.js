@@ -249,29 +249,30 @@ cTemp.addEventListener("click", showCTemp);
 //displayForecast
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="col-sm-2" id="first-day">`;
+  let forecastHTML = `<div class="row" id="first-day">`;
 
   let days = ["SAT", "SUN", "MON", "TUE", "WED", "THU"];
   days.forEach(function (day) {
     forecastHTML =
-      forecastHTML +
-      `
+      forecastHTML +<
+      `<div class="col-2">
             ${day}
           <div class="col-sm">
             <img id="icon" src="src/cloudy.gif" alt="snowflake" width="48px" />
           </div>
           <div class="temp">
-            <div class="col-sm">
+            <div>
               min 
             </br>
             -2°C |°F
             </div>
-            <div class="col-sm">
+            <div">
               min 
             </br>
             -2°C |°F
             </div>
           </div>
+        </div>
         `;
   });
   forecastHTML = forecastHTML + `</div>`;

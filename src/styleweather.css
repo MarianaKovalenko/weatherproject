@@ -36,6 +36,9 @@ input {
 .row {
   width: 350px;
 }
+.row #first-day {
+  margin: 0;
+}
 .column {
   display: block;
   text-align: justify;
@@ -63,11 +66,11 @@ input {
   color: black;
   font-size: x-large;
 }
-.col-sm-2 {
-  display: flex;
+.col-2 {
   border: 1px solid #5aaaff;
   padding: 16px 0;
-  margin: 120px auto 0;
+  margin-top: 120px;
+  margin-right: 2px;
   text-align: center;
   width: 52px;
   color: #5aaaff;
