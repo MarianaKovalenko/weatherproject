@@ -73,6 +73,7 @@ input {
   text-align: center;
   width: 52px;
   color: #5aaaff;
+  background-color: rgb(0, 0, 0, 0.2);
 }
 .temp {
   font-size: xx-small;

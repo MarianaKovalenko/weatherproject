@@ -288,7 +288,7 @@ function displayForecast(response) {
               <span>
               ${Math.round(forecastDay.temp.max)}
               </span>
-              C |°F
+              °C |°F
               </div>
               <div>
                 min 
@@ -296,7 +296,7 @@ function displayForecast(response) {
               <span>
               ${Math.round(forecastDay.temp.min)}
               </span>
-              C |°F
+              °C |°F
               </div>
           </div>
         </div>
