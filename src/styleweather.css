@@ -37,8 +37,7 @@ input {
   width: 350px;
 }
 .row #first-day {
-  margin: 0;
-  height: 290px;
+  margin: 120px;
 }
 .column {
   display: block;
@@ -85,7 +84,6 @@ input {
   border: 1px solid black;
   font-size: 12px;
   display: block;
-  margin-top: 120px;
   margin: 7px auto;
   text-align: center;
   color: white;
