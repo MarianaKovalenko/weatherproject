@@ -189,6 +189,8 @@ function currentTemp(response) {
   let description = document.querySelector("#description");
   let descriptionApi = response.data.weather[0].main;
   description.innerHTML = descriptionApi;
+  // rain warning function for current location
+  warning();
   let minTemp = document.querySelector("#min-temp");
   let minTempApi = Math.round(response.data.main.temp_min);
   minTemp.innerHTML = minTempApi;
@@ -305,4 +307,17 @@ function displayForecast(response) {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+};
+// rain warning function for current location
+function warning() {
+  let warningElement = document.querySelector("#warning");
+  let description = document.querySelector("#description");
+  if (description.innerHTML === "Clouds") {
+    warningElement.innerHTML = `
+    <img id="icon" src="src/warning.png" alt="warning" width="48px" />
+    Warning: don't forget your umbrella! it's raining outside.
+    <img id="icon" src="src/umbrella.png" alt="umbrella" width="48px" />
+    `;
+  }
 }
+
