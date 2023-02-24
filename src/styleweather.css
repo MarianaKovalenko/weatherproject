@@ -111,8 +111,8 @@ input {
 }
 @media(max-width: 768px ){
   body{
-    width: 560px;
-    height: 768px;
+    width: 380px;
+    height: 600px;
   }
   .container {
       width: 360px;
