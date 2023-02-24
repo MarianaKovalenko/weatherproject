@@ -95,6 +95,7 @@ input {
 #warning {
   color: #ee404c;
   display: flex;
+  text-align: center;
   margin: 68px 0 auto;
   padding: 0;
   font-size: 16px;
