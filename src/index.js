@@ -290,7 +290,7 @@ function displayForecast(response) {
               <span>
               ${Math.round(forecastDay.temp.max)}
               </span>
-              °C |°F
+              °C
               </div>
               <div>
                 min 
@@ -298,7 +298,7 @@ function displayForecast(response) {
               <span>
               ${Math.round(forecastDay.temp.min)}
               </span>
-              °C |°F
+              °C
               </div>
           </div>
         </div>
@@ -312,7 +312,7 @@ function displayForecast(response) {
 function warning() {
   let warningElement = document.querySelector("#warning");
   let description = document.querySelector("#description");
-  if (description.innerHTML === "Clouds") {
+  if (description.innerHTML === "Rain") {
     warningElement.innerHTML = `
     Warning: don't forget your umbrella! it's raining outside.
     `;

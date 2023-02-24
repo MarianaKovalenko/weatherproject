@@ -109,3 +109,13 @@ input {
   display: inline;
   background-color: transparent;
 }
+@media(max-width: 768px ){
+  body{
+    width: 560px;
+    height: 768px;
+  }
+  .container {
+      width: 360px;
+      height: 560px;
+  }
+  }
