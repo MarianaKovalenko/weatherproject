@@ -2,7 +2,7 @@ body {
   background-color: #cce2f3;
 }
 h1 {
-  color: green;
+  color: rgb(190, 81, 51);
 }
 input {
   width: 160px;
@@ -47,7 +47,7 @@ input {
   margin: 5px auto;
 }
 .left {
-  color: green;
+  color: rgb(190, 81, 51);
 }
 .name-weather {
   height: 44px;
