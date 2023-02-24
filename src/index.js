@@ -314,7 +314,7 @@ function warning() {
   let description = document.querySelector("#description");
   if (description.innerHTML === "Clouds") {
     warningElement.innerHTML = `
-    <img id="icon" src="${src/warning.png}" alt="warning" width="48px" />
+    <img id="icon" src="${src/warn.png}" alt="warning" width="48px" />
     Warning: don't forget your umbrella! it's raining outside.
     <img id="icon" src="${src/umbrella.png}" alt="umbrella" width="48px" />
     `;
