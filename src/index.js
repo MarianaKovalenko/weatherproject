@@ -312,12 +312,14 @@ function displayForecast(response) {
 function warning() {
   let warningElement = document.querySelector("#warning");
   let description = document.querySelector("#description");
-  if (description.innerHTML === "Clouds") {
-    warningElement.innerHTML = `
-    <img id="icon" src="ihb8d8 (1)/icons/warn.png" alt="warn" width="48px" />
+  if (description.innerHTML === "Rain") {
+let warnImg = document.getElementById("#warnimg");
+warnImg.setAttribute("src", "/icon/warn.png");
+let umbrellaImg = document.getElementById("#umbrellaimg");
+umbrellaImg.setAttribute("src", "/icon/warn.png");
+    warningElement.innerHTML = warnImg+`
     Warning: don't forget your umbrella! it's raining outside.
-    <img id="icon" src="ihb8d8 (1)/icons/umblella.png" alt="umblella" width="48px" />
-    `;
+    `+umbrellaImg;
   }
 }
 
