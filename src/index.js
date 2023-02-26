@@ -136,6 +136,7 @@ function showCityWeather(event) {
     minTemp.innerHTML = minTempApi;
     maxTemp.innerHTML = maxTempApi;
     getForecast(response.data.coord);
+    getForecastF(response.data.coord);
   });
 }
 buttonSearch.addEventListener("click", showCityWeather);
@@ -148,7 +149,7 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 // forecast function Fareingeit
-function getForecast(coordinates) {
+function getForecastF(coordinates) {
   console.log(coordinates);
   let apiKey = "34ae1065362d42545661451bda2b8a1f";
   let apiUrlF = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
