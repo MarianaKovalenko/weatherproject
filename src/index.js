@@ -147,6 +147,14 @@ function getForecast(coordinates) {
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
+// forecast function Fareingeit
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "34ae1065362d42545661451bda2b8a1f";
+  let apiUrlF = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+  console.log(apiUrl);
+  axios.get(apiUrlF).then(displayForecastF);
+}
 // temp current location
 let location = document.querySelector("#location");
 function currentTemp(response) {
@@ -308,6 +316,52 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 };
+//displayForecastF
+function displayForecastF(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row" id="first-day">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index > 0 && index < 7) {
+      forecastHTML =
+        forecastHTML +
+        `
+        <div class="col-2">
+          ${formatDay(forecastDay.dt)}
+          <img id="icon" src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png" alt="snowflake" width="48px" />
+         
+          <div class="temp">
+              <div >
+                max 
+              </br>
+              <span>
+              ${Math.round(forecastDay.temp.max)}
+              </span>
+              °F
+              </div>
+              <div>
+                min 
+              </br>
+              <span>
+              ${Math.round(forecastDay.temp.min)}
+              </span>
+              °F
+              </div>
+          </div>
+        </div>
+      `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+};
+let forecastElement = document.querySelector("#forecast");
+forecastElement.addEventListener("click", displayForecastF);
+
+
 // rain warning function for current location
 function warning() {
   let warningElement = document.querySelector("#warning");
