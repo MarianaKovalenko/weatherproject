@@ -359,8 +359,8 @@ function displayForecastF(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 };
-let forecastElement = document.querySelector("#forecast");
-forecastElement.addEventListener("click", displayForecastF);
+let firstDay = document.querySelector("#first-day");
+firstDay.addEventListener("click", displayForecastF);
 
 
 // rain warning function for current location
