@@ -312,7 +312,7 @@ function displayForecast(response) {
 function warning() {
   let warningElement = document.querySelector("#warning");
   let description = document.querySelector("#description");
-  if (description.innerHTML === "Rain") {
+  if (description.innerHTML === "Clouds") {
 let warnImg = document.getElementById("#warnimg");
 warnImg.setAttribute("src", "/icon/warn.png");
 let umbrellaImg = document.getElementById("#umbrellaimg");
