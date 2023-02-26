@@ -81,7 +81,8 @@ input {
 .end {
   width: 200px;
   padding: 0;
-  border: 1px solid black;
+  margin-top:10px;
+  border: 1px solid white;
   font-size: 12px;
   display: block;
   margin: 7px auto;

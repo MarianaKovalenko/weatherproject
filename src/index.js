@@ -313,15 +313,11 @@ function warning() {
   let warningElement = document.querySelector("#warning");
   let description = document.querySelector("#description");
   if (description.innerHTML === "Clouds") {
-let warnImg = document.getElementById("#warnimg");
-warnImg.setAttribute("src", "/icon/warn.png");
-let umbrellaImg = document.getElementById("#umbrellaimg");
-umbrellaImg.setAttribute("src", "/icon/umbrella.png");
     warningElement.innerHTML = `
     Warning: don't forget your umbrella! it's raining outside.
     `;
-  } else{
-    warningElement.innerHTML=null;
   }
+    
+  
 }
 
