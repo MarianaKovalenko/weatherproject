@@ -312,9 +312,11 @@ function displayForecast(response) {
 function warning() {
   let warningElement = document.querySelector("#warning");
   let description = document.querySelector("#description");
-  if (description.innerHTML === "Rain") {
+  if (description.innerHTML === "Clouds") {
     warningElement.innerHTML = `
+    <img id="icon" src="../src/warn.png" alt="warn" width="48px" />
     Warning: don't forget your umbrella! it's raining outside.
+    <img id="icon" src="../src/umblella.png" alt="umblella" width="48px" />
     `;
   }
 }
